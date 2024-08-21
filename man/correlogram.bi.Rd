@@ -22,10 +22,10 @@ correlogram.bi(coords, varX, varY, method="Moran", nbclass = NULL, zero.policy=N
   \item{\dots}{further arguments to pass to e.g. \code{\link[bispdep]{moranbi.test}} or \code{\link[bispdep]{gearybi.test}}}
 }
 \details{
-  Uses the library bispdep including \code{\link[bispdep]{moranbi.test}} or \code{\link[bispdep]{gearybi.test}}. Distances are euclidian and in the same unit as the spatial coordinates.  Moran's Ho: I values larger than 0 due to chance; Geary's Ho: C values lesser than 1 due to chance, correlogram.bi has print and plot methods; statistically significant values (p<0.05) are plotted in red.
+  Uses the library bispdep including \code{\link[bispdep]{moranbi.test}} or \code{\link[bispdep]{gearybi.test}}. Distances are euclidian and in the same unit as the spatial coordinates.  Moran's Ho: I values larger than 0 due to chance; Geary's Ho: C values lesser than 1 due to chance, \code{correlogrambi} has print and plot methods; statistically significant values (p<0.05) are plotted in red.
 }
 \value{
-  An object of class "correlog.bi", a matrix including:
+  An object of class "correlogrambi", a matrix including:
   \item{class }{bin centers}
   \item{I }{the coefficient values}
   \item{p.value }{probability of Ho }
@@ -44,15 +44,17 @@ library(sf)
 data(oldcol)
 attach(COL.OLD)
 coords<-cbind(X,Y)
-columbus <- st_read(system.file("shapes/columbus.shp", package="spData")[1], quiet=TRUE)
+columbus <- st_read(system.file("shapes/columbus.gpkg", package="spData")[1])
 plot(st_geometry(columbus))
 
-corbiM <- correlogram.bi(coords,columbus$CRIME,columbus$INC, zero.policy=TRUE)
+\donttest{
+corbiM <- correlogram.bi(coords,columbus$CRIME,columbus$INC,zero.policy=TRUE)
 corbiM
 plot(corbiM)
 
 corbiG <- correlogram.bi(coords,columbus$CRIME,columbus$INC,method="Geary",zero.policy=TRUE)
 corbiG
 plot(corbiG)
+}
 }
 \keyword{ spatial }

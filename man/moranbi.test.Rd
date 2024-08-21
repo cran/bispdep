@@ -19,7 +19,7 @@ moranbi.test(varX,varY,listw,randomisation=TRUE,zero.policy=NULL,
   \item{rank}{logical value - default FALSE for continuous variables, if TRUE, uses the adaptation of Moran's I for ranks suggested by Cliff and Ord (1981, p. 46)}
   \item{spChk}{should the data vector names be checked against the spatial objects for identity integrity, TRUE, or FALSE, default NULL to use \code{get.spChkOption()}}
   \item{adjust.n}{default TRUE, if FALSE the number of observations is not adjusted for no-neighbour observations, if TRUE, the number of observations is adjusted}
-   \item{drop.EI2}{default FALSE, if TRUE, emulate CrimeStat <= 4.02}
+  \item{drop.EI2}{default FALSE, if TRUE, emulate CrimeStat <= 4.02}
 }
 
 
@@ -41,13 +41,13 @@ square of the first crude moment. The derivation of the test (Cliff and Ord, 198
 
 \references{Cliff, A. D., Ord, J. K. 1981 Spatial processes, Pion, p. 21; Bivand RS, Wong DWS 2018 Comparing implementations of global and local indicators of spatial association. TEST, 27(3), 716--748 \doi{10.1007/s11749-018-0599-x}}
 
-\seealso{\code{\link{moran}}, \code{\link{moran.mc}}, \code{\link{listw2U}}}
+\seealso{\code{\link[spdep]{moran}}, \code{\link[spdep]{moran.mc}}, \code{\link[spdep]{listw2U}}}
 
 \examples{
 library(spdep)
 data(columbus)
 data(oldcol)
-columbus <- st_read(system.file("shapes/columbus.shp", package="spData")[1], quiet=TRUE)
+columbus <- st_read(system.file("shapes/columbus.gpkg", package="spData")[1])
 plot(st_geometry(columbus))
 col_nbq <- poly2nb(columbus)
 set.seed(123)

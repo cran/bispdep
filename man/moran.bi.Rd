@@ -16,7 +16,7 @@ moran.bi(varX, varY, listw, zero.policy=NULL, adjust.n = TRUE, NAOK=FALSE)
   \item{listw}{a \code{listw} object created for example by \code{nb2listw}}
   \item{zero.policy}{default NULL, use global option value; if TRUE assign zero to the lagged value of zones without neighbours, if FALSE assign NA}
   \item{adjust.n}{default TRUE, if FALSE the number of observations is not adjusted for no-neighbour observations, if TRUE, the number of observations is adjusted}
-  \item{NAOK}{if 'TRUE' then any 'NA' or 'NaN' or 'Inf' values in x are passed on to the foreign function.  If 'FALSE', the presence of 'NA' or 'NaN' or 'Inf' values is regarded as an error.}
+  \item{NAOK}{if 'TRUE' then any 'NA' or 'NaN' or 'Inf' values in x are passed on to the foreign function.  If 'FALSE', the presence of 'NA' or 'NaN' or 'Inf' values is regarded as an error}
 }
 
 \value{

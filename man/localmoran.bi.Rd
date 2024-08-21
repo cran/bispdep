@@ -49,14 +49,14 @@ Anselin, Luc, Ibnu Syabri, and Oleg Smirnov. 2002. “Visualizing Multivariate S
 
 }
 
-\seealso{\code{\link{localG}}}
+\seealso{\code{\link[spdep]{localG}}}
 
 \examples{
 library(spdep)
 # load columbus data
 data(columbus)
 data(oldcol)
-columbus <- st_read(system.file("shapes/columbus.shp", package="spData")[1], quiet=TRUE)
+columbus <- st_read(system.file("shapes/columbus.gpkg", package="spData")[1])
 col_nbq <- poly2nb(columbus)
 a.lw <- nb2listw(col_nbq, style="W")
 localmoran.bi(columbus$CRIME, columbus$HOVAL, a.lw, zero.policy=TRUE,

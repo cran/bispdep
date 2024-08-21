@@ -13,12 +13,12 @@ else if (is.null(obs)==FALSE) {
        myPol <- obs
        myPol
 }
-       result <- polygons[myPol, ]
-       centroidsp <- st_geometry(st_centroid(result$geometry))
+       result <- st_geometry(polygons)[myPol, ]
+       centroidsp <- st_geometry(st_centroid(result))
        text(st_coordinates(centroidsp)[,1],st_coordinates(centroidsp)[,2],eval(parse(text = paste("result",var.label, sep="$"))),cex=cex)
        neighbors.pol <- polygons[nb[[myPol]],]
        plot(st_geometry(neighbors.pol), col = col, add = TRUE)
-       centroidsn <- st_geometry(st_centroid(neighbors.pol$geometry))
+       centroidsn <- st_geometry(st_centroid(neighbors.pol))
        text(st_coordinates(centroidsn)[,1],st_coordinates(centroidsn)[,2],eval(parse(text = paste("neighbors.pol",var.label, sep="$"))),cex=cex)
        }
 )

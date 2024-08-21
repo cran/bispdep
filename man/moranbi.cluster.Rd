@@ -64,7 +64,7 @@ significance map but the choropleth legend is different (Not - Significant, High
 \examples{
 library(spdep)
 data(columbus)
-columbus <- st_read(system.file("shapes/columbus.shp", package="spData")[1], quiet=TRUE)
+columbus <- st_read(system.file("shapes/columbus.gpkg", package="spData")[1])
 plot(st_geometry(columbus))
 col_nbq <- poly2nb(columbus)
 a.lw <- nb2listw(col_nbq, style="W")

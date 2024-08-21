@@ -21,10 +21,10 @@ correlogram(coords, z, method="Moran", nbclass = NULL, zero.policy=NULL, ...)
   \item{\dots}{further arguments to pass to e.g. \code{\link[spdep]{moran.test}} or \code{\link[spdep]{geary.test}}}
 }
 \details{
-  Uses the library spdep including \code{\link[spdep]{moran.test}} or \code{\link[spdep]{geary.test}}. Distances are euclidian and in the same unit as the spatial coordinates.  Moran's Ho: I values larger than 0 due to chance; Geary's Ho: C values lesser than 1 due to chance. Correlog has print and plot methods; statistically significant values (p<0.05) are plotted in red.
+  Uses the library spdep including \code{\link[spdep]{moran.test}} or \code{\link[spdep]{geary.test}}. Distances are euclidian and in the same unit as the spatial coordinates.  Moran's Ho: I values larger than 0 due to chance; Geary's Ho: C values lesser than 1 due to chance. \code{correlogram} has print and plot methods; statistically significant values (p<0.05) are plotted in red.
 }
 \value{
-  An object of class "correlog", a matrix including:
+  An object of class "correlogram", a matrix including:
   \item{class }{bin centers}
   \item{I }{the coefficient values}
   \item{p.value }{probability of Ho }

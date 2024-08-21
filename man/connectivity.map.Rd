@@ -21,11 +21,11 @@ around a region selected by the user by clicking on the screen
 A spatial connectivity map showing the neighbors according to the weighting scheme.
 }
 
-\seealso{\code{\link{poly2nb}}, \code{\link{knn2nb}}, \code{\link{graph2nb}}}
+\seealso{\code{\link[spdep]{poly2nb}}, \code{\link[spdep]{knn2nb}}, \code{\link[spdep]{graph2nb}}}
 
 \examples{
 library(spdep)
-columbus <- st_read(system.file("shapes/columbus.shp", package="spData")[1], quiet=TRUE)
+columbus <- st_read(system.file("shapes/columbus.gpkg", package="spData")[1])
 #Queen neighbours
 col_nbq1 <- poly2nb(columbus)             # queen, order 1
 col.lags10 <- nblag(col_nbq1, 10)         # queen, up to order 10

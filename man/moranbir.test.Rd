@@ -40,20 +40,20 @@ For hypothesis testing the sample values are compared with empirical density, an
 \section{Links}{
 Adapted from:
 \enumerate{
-   \item Spatial Autocorrelation \href{https://blogs.oregonstate.edu/geo599spatialstatistics/2016/06/08/spatial-autocorrelation-morans/}{(Moran’s I) Test}
+   \item Spatial Autocorrelation \href{https://www.paulamoraga.com/book-spatial/spatial-autocorrelation.html}{(Moran’s I) Test}
    \item Moran's I \href{https://stats.oarc.ucla.edu/r/faq/how-can-i-calculate-morans-i-in-r/}{Test}
 }
 }
 
 \references{Cliff, A. D., Ord, J. K. 1981 Spatial processes, Pion, p. 21; Bivand RS, Wong DWS 2018 Comparing implementations of global and local indicators of spatial association. TEST, 27(3), 716--748 \doi{10.1007/s11749-018-0599-x}}
 
-\seealso{\code{\link{moran.bi}}, \code{\link{moranbi.mc}}, \code{\link{listw2U}}}
+\seealso{\code{\link{moran.bi}}, \code{\link{moranbi.mc}}, \code{\link[spdep]{listw2U}}}
 
 \examples{
 library(spdep)
 data(columbus)
 data(oldcol)
-columbus <- st_read(system.file("shapes/columbus.shp", package="spData")[1], quiet=TRUE)
+columbus <- st_read(system.file("shapes/columbus.gpkg", package="spData")[1])
 plot(st_geometry(columbus))
 col_nbq <- poly2nb(columbus)
 a.lw <- nb2listw(col_nbq, style="W")

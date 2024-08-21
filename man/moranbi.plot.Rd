@@ -32,7 +32,7 @@ moranbi.plot(varY, varX, listw, zero.policy=NULL, spChk=NULL, labels=NULL,
 
 \examples{
 library(spdep)
-columbus <- st_read(system.file("shapes/columbus.shp", package="spData")[1], quiet=TRUE)
+columbus <- st_read(system.file("shapes/columbus.gpkg", package="spData")[1])
 col_nbq <- poly2nb(columbus)
 a.lw <- nb2listw(col_nbq, style="W")
 
